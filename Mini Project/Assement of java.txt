@@ -1,0 +1,28 @@
+                                                  UPI-Style Peer-to-Peer Wallet
+                                         Complete Assessment Solution and JDBC Mini Project
+
+
+1. How Java runtime enables this wallet to work across operating systems
+
+--> java source code compiled into byte code which run on the jvm .So implementation, the same wallet program can run on all of them without rewriting the business logic.
+
+2. Precision handling for money transfers
+--> Money should not be stored in float or double for real financial calculations because binary floating-point introduces rounding errors.
+ 
+3. Explain transfer validation logic.
+--> A transfer must validate that the sender exists, the receiver exists, the sender and receiver are different, the amount is positive, and the sender has enough balance. Validation should happen before updating balances, and the final debit and credit must run inside one database transaction so partial updates cannot occur.
+
+4. Explain Loop usage for monthly summaries
+--> Loops are useful for traversing a list of transactions and calculating totals such as monthly incoming amount, outgoing amount, successful transfer count, and failed transfer count.. A loop can also generate formatted console reports or write CSV rows during statement export.
+
+5. Explain why collections suit transaction storage.
+--> Collections such as ArrayList make it easy to store, iterate, filter, and sort transaction objects in memory after reading them from the database. They are flexible, dynamic in size, and useful for generating history views, monthly summaries, and exports before writing the final result to a file.
+
+6. Explain payment modes using polymorphism.
+-->Polymorphism lets the application treat multiple payment types through one common interface such as PaymentMethod.. For example, BankTransfer and WalletBalance can both implement processPayment(amount), but each class can apply its own rules internally.                                                                                           
+
+
+
+
+
+
